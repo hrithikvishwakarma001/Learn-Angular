@@ -1,0 +1,3 @@
+<div *ngFor="let todo of todos" class="border p-2 mb-2">
+  <app-todo-item [todo]="todo" (delete)="deleteTodo(todo.id)" (toggle)="toggleTodoStatus(todo.id)"></app-todo-item>
+</div>
