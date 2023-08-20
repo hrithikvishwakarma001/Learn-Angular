@@ -1,5 +1,0 @@
-<div [ngClass]="{'line-through': todo.completed}">
-  <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggle.emit(todo.id)">
-  {{ todo.title }}
-  <button class="bg-red-500 text-white p-1 ml-2" (click)="delete.emit(todo.id)">Delete</button>
-</div>
