@@ -11,7 +11,9 @@ export class TodosComponent implements OnInit {
   todos: Todo[] = [];
   constructor(private todoService: TodoService) {}
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe((todos) => (this.todos = todos));
+    this.todoService.getTodos().subscribe((todos) => {
+      this.todos = todos;
+    });
   }
   onDelete = (todo: Todo) => {
     this.todoService.deleteTodo(todo).subscribe(() => {
@@ -21,5 +23,10 @@ export class TodosComponent implements OnInit {
   onToggle = (todo: Todo) => {
     todo.reminder = !todo.reminder;
     this.todoService.toggleReminder(todo).subscribe();
+  };
+  onAdd = (todo: Todo) => {
+    this.todoService.addTodo(todo).subscribe((newTodo) => {
+      this.todos.push(newTodo);
+    });
   };
 }

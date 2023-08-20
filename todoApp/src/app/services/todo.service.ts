@@ -24,4 +24,7 @@ export class TodoService {
     const url = `${this.apiUrl}/${todo.id}`;
     return this.http.put<Todo>(url, todo, httpOptions);
   };
+  addTodo = (todo: Todo): Observable<Todo> => {
+    return this.http.post<Todo>(this.apiUrl, todo, httpOptions);
+  };
 }
