@@ -1,4 +1,4 @@
-<div class="py-6 px-4 mx-6">
+<div class="py-6 px-4 mx-6" *ngIf="showAddTodo">
   <h2 class="text-xl font-semibold mb-4">Add Todo</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="mb-4">
