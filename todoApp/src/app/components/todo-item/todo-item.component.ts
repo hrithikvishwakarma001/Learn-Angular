@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Todo } from 'src/app/Todo';
 
@@ -9,7 +9,11 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponent {
   @Input() todo!: Todo;
+  @Output() onDeleteTodo: EventEmitter<Todo> = new EventEmitter();
   faTimes = faTimes;
+  onDelete(todo: Todo) {
+    this.onDeleteTodo.emit(todo);
+  }
 }
 
 // ERROR
