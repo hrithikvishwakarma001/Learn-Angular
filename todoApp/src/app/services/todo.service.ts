@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Todo } from '../Todo';
-import { TODOS } from '../mock-todos';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+};
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +19,9 @@ export class TodoService {
   deleteTodo = (todo: Todo): Observable<Todo> => {
     const url = `${this.apiUrl}/${todo.id}`;
     return this.http.delete<Todo>(url);
-  }
+  };
+  toggleReminder = (todo: Todo): Observable<Todo> => {
+    const url = `${this.apiUrl}/${todo.id}`;
+    return this.http.put<Todo>(url, todo, httpOptions);
+  };
 }

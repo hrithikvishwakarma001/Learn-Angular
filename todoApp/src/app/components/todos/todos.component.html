@@ -1,5 +1,7 @@
+
 <app-todo-item
   *ngFor="let todo of todos"
   [todo]="todo"
   (onDeleteTodo)="onDelete($event)"
+  (onToggleReminder)="onToggle($event)"
 ></app-todo-item>

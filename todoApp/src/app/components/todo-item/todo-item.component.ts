@@ -10,9 +10,13 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent {
   @Input() todo!: Todo;
   @Output() onDeleteTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Todo> = new EventEmitter();
   faTimes = faTimes;
   onDelete(todo: Todo) {
     this.onDeleteTodo.emit(todo);
+  }
+  onToggle(todo: Todo) {
+    this.onToggleReminder.emit(todo);
   }
 }
 

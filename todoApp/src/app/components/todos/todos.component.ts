@@ -18,4 +18,8 @@ export class TodosComponent implements OnInit {
       this.todos = this.todos.filter((t) => t.id !== todo.id);
     });
   };
+  onToggle = (todo: Todo) => {
+    todo.reminder = !todo.reminder;
+    this.todoService.toggleReminder(todo).subscribe();
+  };
 }
