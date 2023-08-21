@@ -28,7 +28,7 @@ const appRoutes: Route[] = [{ path: '', component: TodosComponent }];
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],

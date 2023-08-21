@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Todo } from '../Todo';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -11,7 +12,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TodoService {
-  private apiUrl = 'https://calico-global-error.glitch.me/todos';
+  private apiUrl = environment.apiUrl+'/todos';
   constructor(private http: HttpClient) {}
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.apiUrl);
