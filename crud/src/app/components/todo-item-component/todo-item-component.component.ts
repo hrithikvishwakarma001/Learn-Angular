@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,Output } from '@angular/core';
 import { Todo } from 'src/app/Todo';
-
+import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-todo-item-component',
   templateUrl: './todo-item-component.component.html',
@@ -8,12 +8,14 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponentComponent {
   @Input() item!: Todo;
+  @Output() onDeleteTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() onEditTodo: EventEmitter<Todo> = new EventEmitter();
   constructor() {}
 
   editItem(todo: Todo) {
-    console.log('editItem', todo);
+    this.onEditTodo.emit(todo);
   }
   deleteItem(todo: Todo) {
-    console.log('deleteItem', todo);
+    this.onDeleteTodo.emit(todo);
   }
 }
