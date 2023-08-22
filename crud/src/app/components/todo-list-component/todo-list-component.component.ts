@@ -24,9 +24,10 @@ export class TodoListComponentComponent implements OnInit {
     });
   }
   onEditTodoItem(todo: Todo) {
-    const promtMessage = prompt('Edit Todo Item');
+    const promtMessage = prompt('Edit Todo Title');
     if (promtMessage) {
-      this.todoService.editTodoItem(todo).subscribe(() => {
+
+      this.todoService.editTodoItem({...todo,text:promtMessage}).subscribe((newTodo) => {
         this.todos = this.todos.map((t) =>
           t.id === todo.id ? { ...todo, text: promtMessage } : t
         );
@@ -37,9 +38,4 @@ export class TodoListComponentComponent implements OnInit {
     todo.reminder = !todo.reminder;
     this.todoService.toggleReminder(todo).subscribe();
   };
-  onAddTodo=(newTodo:Todo)=>{
-    this.todoService.addTodoItem(newTodo).subscribe((todo)=>{
-      this.todos.push(todo)
-    })
-  }
 }

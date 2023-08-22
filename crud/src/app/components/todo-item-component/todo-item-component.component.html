@@ -1,4 +1,4 @@
-<div class="bg-white rounded-lg border p-4 shadow-md mb-2 cursor-pointer" (dblclick)="onToggle(item)">
+<div class="bg-white rounded-lg border p-4 shadow-md mb-2 cursor-pointer select-none" (dblclick)="onToggle(item)">
   <div class="flex justify-between items-center mb-2"   >
     <h2 class="text-lg font-semibold">{{ item.text }}</h2>
     <div class="space-x-2">
@@ -24,5 +24,6 @@
         item.reminder ? 'bg-green-300' : 'bg-red-300'
       }}"
     ></div>
+    <i class="ml-2">double click to toggle</i>
   </div>
 </div>

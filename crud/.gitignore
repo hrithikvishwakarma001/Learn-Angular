@@ -5,7 +5,9 @@
 /tmp
 /out-tsc
 /bazel-out
-
+/environment.prod.ts
+/environments/environment.prod.ts
+/environments/environment.ts
 # Node
 /node_modules
 npm-debug.log
@@ -40,3 +42,5 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+.vercel
