@@ -1,1 +1,4 @@
-<p>todo-list-component works!</p>
+<app-todo-item-component
+    *ngFor="let todo of todos"
+    [todo]="todo"
+></app-todo-item-component>
