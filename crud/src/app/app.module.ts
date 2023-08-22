@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoListComponentComponent } from './components/todo-list-component/todo-list-component.component';
+import { TodoItemComponentComponent } from './components/todo-item-component/todo-item-component.component';
+import { CreateTodoComponentComponent } from './components/create-todo-component/create-todo-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoListComponentComponent,
+    TodoItemComponentComponent,
+    CreateTodoComponentComponent
   ],
   imports: [
     BrowserModule,
