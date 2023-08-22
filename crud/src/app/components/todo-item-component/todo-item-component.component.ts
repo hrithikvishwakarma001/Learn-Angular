@@ -7,5 +7,13 @@ import { Todo } from 'src/app/Todo';
   styleUrls: ['./todo-item-component.component.css'],
 })
 export class TodoItemComponentComponent {
-  @Input() todo!: Todo;
+  @Input() item!: Todo;
+  constructor() {}
+
+  editItem(todo: Todo) {
+    console.log('editItem', todo);
+  }
+  deleteItem(todo: Todo) {
+    console.log('deleteItem', todo);
+  }
 }
