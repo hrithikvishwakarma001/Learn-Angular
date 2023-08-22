@@ -1,0 +1,7 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg min-h-min">
+  <img class="w-full" [src]="category.strCategoryThumb" alt="{{ category.strCategory }}">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">{{ category.strCategory }}</div>
+    <p class="text-gray-700 text-base">{{ category.strCategoryDescription.slice(0,50)+"..." }}</p>
+  </div>
+</div>
