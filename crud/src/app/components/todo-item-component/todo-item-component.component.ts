@@ -10,6 +10,7 @@ export class TodoItemComponentComponent {
   @Input() item!: Todo;
   @Output() onDeleteTodo: EventEmitter<Todo> = new EventEmitter();
   @Output() onEditTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Todo> = new EventEmitter();
   constructor() {}
 
   editItem(todo: Todo) {
@@ -17,5 +18,8 @@ export class TodoItemComponentComponent {
   }
   deleteItem(todo: Todo) {
     this.onDeleteTodo.emit(todo);
+  }
+  onToggle(todo: Todo) {
+    this.onToggleReminder.emit(todo);
   }
 }

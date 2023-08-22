@@ -17,4 +17,19 @@ export class TodoService {
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.apiUrl);
   }
+  deleteTodo = (todo: Todo): Observable<Todo> => {
+    const url = `${this.apiUrl}/${todo.id}`;
+    return this.http.delete<Todo>(url);
+  };
+  toggleReminder = (todo: Todo): Observable<Todo> => {
+    const url = `${this.apiUrl}/${todo.id}`;
+    return this.http.put<Todo>(url, todo, httpOptions);
+  };
+  editTodoItem = (todo: Todo): Observable<Todo> => {
+    const url = `${this.apiUrl}/${todo.id}`;
+    return this.http.put<Todo>(url, todo, httpOptions);
+  };
+  addTodoItem = (todo: Todo): Observable<Todo> => {
+    return this.http.post<Todo>(this.apiUrl, todo, httpOptions);
+  };
 }
