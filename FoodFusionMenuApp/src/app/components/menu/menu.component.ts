@@ -8,6 +8,7 @@ import { OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   categories: any[] = [];
+  filteredMeals: any[] = [];
   constructor(private menuservice: MenuService) {}
   ngOnInit(): void {
     this.menuservice.getCategories().subscribe(
@@ -16,7 +17,7 @@ export class MenuComponent implements OnInit {
         this.categories = data.categories;
       },
       (error) => {
-        console.log("Error: ", error);
+        console.log('Error: ', error);
       }
     );
   }
