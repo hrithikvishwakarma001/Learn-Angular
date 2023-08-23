@@ -15,6 +15,7 @@ export class FilterMealsComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const param = params.get('category') as string;
+      console.log(params);
       this.param = param;
       this.menuService.getFilter(param).subscribe(
         (data) => {

@@ -19,7 +19,7 @@ export class MenuService {
   public getFilter(category: string): Observable<any> {
     return this.http.get(`${this.apiURL}/filter.php?c=${category}`);
   }
-  public getMeal(id: string): Observable<any> {
+  public getMealById(id: string): Observable<any> {
     return this.http.get(`${this.apiURL}/lookup.php?i=${id}`);
   }
 }
