@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
-
-  constructor() { }
+  private apiUrl = 'http://localhost:3000/users';
+  constructor(private http: HttpClient) {
+    console.log('Authentication Service Initialized...');
+  }
+  registerUser(user: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, user, httpOptions);
+  }
 }

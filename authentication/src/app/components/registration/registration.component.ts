@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -7,7 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: AuthenticationService
+  ) {}
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
@@ -17,7 +21,15 @@ export class RegistrationComponent implements OnInit {
   }
   registerUser() {
     if (this.registrationForm.valid) {
-      console.log(JSON.stringify(this.registrationForm.value));
+      const user = this.registrationForm.value;
+      this.userService.registerUser(user).subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
   }
 }

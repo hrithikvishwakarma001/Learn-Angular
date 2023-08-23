@@ -5,6 +5,12 @@
       "username": "dom",
       "password": "dom123",
       "email": "dom@gmail.com"
+    },
+    {
+      "username": "hrithik",
+      "email": "hritik8008@gmail.com",
+      "password": "hrithik123",
+      "id": 2
     }
   ]
 }
