@@ -27,7 +27,9 @@
           loginForm.get('password')?.touched
         "
         class="text-red-500 mt-1"
-      >Password is required</p>
+      >
+        Password is required
+      </p>
     </div>
 
     <button
@@ -39,4 +41,7 @@
       Login
     </button>
   </form>
+  <div *ngIf="token" class="mt-4 bg-green-500 text-white py-2 px-3 rounded">
+    Token : <p>{{ token }}</p>
+  </div>
 </div>
