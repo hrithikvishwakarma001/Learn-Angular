@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { FilterMealsComponent } from './components/filter-meals/filter-meals.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AboutMealsComponent } from './components/about-meals/about-meals.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
   { path: 'meals/:category', component: FilterMealsComponent },
   { path: 'about/:about', component: AboutMealsComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
