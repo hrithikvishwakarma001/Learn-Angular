@@ -11,6 +11,18 @@
       "email": "hritik8008@gmail.com",
       "password": "hrithik123",
       "id": 2
+    },
+    {
+      "username": "anonymous",
+      "email": "anonymous@gmail.com",
+      "password": "anonymous",
+      "id": 3
+    },
+    {
+      "username": "dfsdf",
+      "email": "fdj@gmail.com",
+      "password": "dfsfdsfsdfsd",
+      "id": 4
     }
   ]
 }
