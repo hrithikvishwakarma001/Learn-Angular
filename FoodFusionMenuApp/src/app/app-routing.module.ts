@@ -5,13 +5,14 @@ import { MenuComponent } from './components/menu/menu.component';
 import { AboutMealsComponent } from './components/about-meals/about-meals.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: MenuComponent },
+  { path: '', component: LoginComponent },
+  { path: 'menu', canActivate: [authGuard],component: MenuComponent },
   { path: 'meals/:category', component: FilterMealsComponent },
   { path: 'about/:about', component: AboutMealsComponent },
   { path: 'register', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

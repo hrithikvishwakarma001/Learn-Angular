@@ -10,7 +10,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = 'https://calico-global-error.glitch.me/users';
   constructor(private http: HttpClient) {
     console.log('Authentication Service Initialized...');
   }
